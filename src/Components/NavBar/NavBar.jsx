@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavBar.css";
 function NavBar() {
   return (
-    <div>
+    <div className="plotter-nav-bar">
       <Navbar className="justify-content-center" bg="dark" variant="dark">
         <Navbar.Brand>Plotter</Navbar.Brand>
       </Navbar>

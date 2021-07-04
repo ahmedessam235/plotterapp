@@ -1,0 +1,14 @@
+.data-table{
+    border: 1px solid;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+    width: 10%;
+    height: 100vh;
+    text-align: center;
+}
+
+.headline{
+    border-bottom: 1px solid;
+    background-color: #343a40;
+    color: white;
+}

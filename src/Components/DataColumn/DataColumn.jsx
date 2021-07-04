@@ -1,7 +1,45 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import "./DataColumn.css";
+import Spinner from "react-bootstrap/Spinner";
+import getColumnData from "../../Actions/columnActions";
+import ColumnDataElement from "../ColumnDataElement/ColumnDataElement";
 function DataColumn() {
-  return <h1>hello world</h1>;
+  const [dataTypes, renderDatatypes] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const requestedColumnData = await getColumnData();
+      renderDatatypes(requestedColumnData);
+    }
+    fetchData();
+  }, []);
+
+  if (dataTypes) {
+    //waiting till the data is feteched from the API
+
+    return (
+      <div className="data-table">
+        <h4 className="headline">Columns</h4>
+        {dataTypes.map((dataElement, index) => {
+          return (
+            <ColumnDataElement
+              columnDataName={dataElement.name}
+              columnDataFunction={dataElement.function}
+            />
+          );
+        })}
+      </div>
+    );
+  } else {
+    //loading animation bootstrap "spinner" until data is fetched
+    return (
+      <div>
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
 }
 
 export default DataColumn;
