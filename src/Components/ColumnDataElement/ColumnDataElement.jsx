@@ -1,5 +1,6 @@
 import React from "react";
-import { Draggable } from 'react-beautiful-dnd'
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+
 
 function ColumnDataElement(props) {
 
@@ -8,9 +9,10 @@ function ColumnDataElement(props) {
 
 
         <div
-       
         >
+        <DragDropContainer targetKey="foo" >
           {props.columnDataName}
+          </DragDropContainer>
         </div>
   
   

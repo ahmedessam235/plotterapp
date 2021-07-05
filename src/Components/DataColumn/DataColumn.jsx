@@ -3,7 +3,8 @@ import "./DataColumn.css";
 import Spinner from "react-bootstrap/Spinner";
 import getColumnData from "../../Actions/columnActions";
 import ColumnDataElement from "../ColumnDataElement/ColumnDataElement";
-import { Droppable } from "react-beautiful-dnd";
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+
 
 function DataColumn() {
   const [dataTypes, renderDatatypes] = useState(null);
@@ -20,18 +21,10 @@ function DataColumn() {
     //waiting till the data is feteched from the API
 
     return (
+      
       <div className="data-table">
         <h4 className="headline">Columns</h4>
-        <Droppable droppableId="col-1">
-          {(provided) => (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
+        
               {dataTypes.map((dataElement, index) => {
                 return (
                   <ColumnDataElement
@@ -41,11 +34,11 @@ function DataColumn() {
                   />
                 );
               })}
-              {provided.placeholder}
+              
+           
             </div>
-          )}
-        </Droppable>
-      </div>
+          
+     
     );
   } else {
     //loading animation bootstrap "spinner" until data is fet
