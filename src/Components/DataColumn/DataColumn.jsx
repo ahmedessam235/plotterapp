@@ -3,8 +3,6 @@ import "./DataColumn.css";
 import Spinner from "react-bootstrap/Spinner";
 import getColumnData from "../../Actions/columnActions";
 import ColumnDataElement from "../ColumnDataElement/ColumnDataElement";
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
-
 
 function DataColumn() {
   const [dataTypes, renderDatatypes] = useState(null);
@@ -31,10 +29,11 @@ function DataColumn() {
                     columnDataName={dataElement.name}
                     columnDataFunction={dataElement.function}
                     index={index}
+                    key={index}
                   />
                 );
               })}
-              
+             
            
             </div>
           

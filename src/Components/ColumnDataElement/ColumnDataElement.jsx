@@ -1,5 +1,5 @@
 import React from "react";
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+import { DragDropContainer} from 'react-drag-drop-container';
 
 
 function ColumnDataElement(props) {

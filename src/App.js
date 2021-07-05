@@ -1,17 +1,14 @@
 // import LineChart from "./Components/Plotter/Plotter";
 import DataColumn from "./Components/DataColumn/DataColumn";
 import NavBar from "./Components/NavBar/NavBar";
-import { DragDropContext } from "react-beautiful-dnd";
+import DataSelectionBars from "./Components/DataSelectionBars/DataSelectionBars";
 function App() {
-  function onDragEnd(e) {
-    console.log(e);
-  }
+
   return (
     <div className="App">
       <NavBar />
-      <DragDropContext onDragEnd={onDragEnd}>
         <DataColumn />
-      </DragDropContext>
+<DataSelectionBars />
       {/* <LineChart /> */}
     </div>
   );
