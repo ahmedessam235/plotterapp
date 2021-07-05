@@ -3,6 +3,8 @@ import "./DataColumn.css";
 import Spinner from "react-bootstrap/Spinner";
 import getColumnData from "../../Actions/columnActions";
 import ColumnDataElement from "../ColumnDataElement/ColumnDataElement";
+import { Droppable } from "react-beautiful-dnd";
+
 function DataColumn() {
   const [dataTypes, renderDatatypes] = useState(null);
 
@@ -20,18 +22,33 @@ function DataColumn() {
     return (
       <div className="data-table">
         <h4 className="headline">Columns</h4>
-        {dataTypes.map((dataElement, index) => {
-          return (
-            <ColumnDataElement
-              columnDataName={dataElement.name}
-              columnDataFunction={dataElement.function}
-            />
-          );
-        })}
+        <Droppable droppableId="col-1">
+          {(provided) => (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {dataTypes.map((dataElement, index) => {
+                return (
+                  <ColumnDataElement
+                    columnDataName={dataElement.name}
+                    columnDataFunction={dataElement.function}
+                    index={index}
+                  />
+                );
+              })}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
       </div>
     );
   } else {
-    //loading animation bootstrap "spinner" until data is fetched
+    //loading animation bootstrap "spinner" until data is fet
     return (
       <div>
         <Spinner animation="border" role="status">
