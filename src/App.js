@@ -2,13 +2,16 @@
 import DataColumn from "./Components/DataColumn/DataColumn";
 import NavBar from "./Components/NavBar/NavBar";
 import DataSelectionBars from "./Components/DataSelectionBars/DataSelectionBars";
+import './App.css';
 function App() {
 
   return (
-    <div className="App">
+    <div >
       <NavBar />
+      <div className="data-section">
         <DataColumn />
-<DataSelectionBars />
+        <DataSelectionBars />
+        </div>
       {/* <LineChart /> */}
     </div>
   );

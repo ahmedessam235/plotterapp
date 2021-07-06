@@ -10,7 +10,8 @@ function ColumnDataElement(props) {
 
         <div
         >
-        <DragDropContainer targetKey="foo" >
+        {/* specifying the drag area and giving the target key by fucntion to prevent dragging dimension element in measurement and vice versa */}
+        <DragDropContainer targetKey={props.columnDataFunction} > 
           {props.columnDataName}
           </DragDropContainer>
         </div>

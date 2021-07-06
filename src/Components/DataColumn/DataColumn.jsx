@@ -17,7 +17,7 @@ function DataColumn() {
 
   if (dataTypes) {
     //waiting till the data is feteched from the API
-
+console.log(dataTypes);
     return (
       
       <div className="data-table">
