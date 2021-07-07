@@ -12,10 +12,13 @@ export async function getColumnData(token, pageNumber) {
     return response.status;
   }
 }
-export async function getBusinessData(measure, dimension) {
+export async function getBusinessData(buisnessData) {
   var response = "null";
   try {
-    const requestedData = { measures: ["Cost"], dimension: "Product" };
+    const requestedData = {
+      measures: [buisnessData.measures],
+      dimension: buisnessData.dimension,
+    };
     response = await axios.post(
       "https://plotter-task.herokuapp.com/data",
       requestedData
