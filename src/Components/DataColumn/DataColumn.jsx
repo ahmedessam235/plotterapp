@@ -17,27 +17,21 @@ function DataColumn() {
 
   if (dataTypes) {
     //waiting till the data is feteched from the API
-console.log(dataTypes);
     return (
-      
       <div className="data-table">
         <h4 className="headline">Columns</h4>
-        
-              {dataTypes.map((dataElement, index) => {
-                return (
-                  <ColumnDataElement
-                    columnDataName={dataElement.name}
-                    columnDataFunction={dataElement.function}
-                    index={index}
-                    key={index}
-                  />
-                );
-              })}
-             
-           
-            </div>
-          
-     
+
+        {dataTypes.map((dataElement, index) => {
+          return (
+            <ColumnDataElement
+              columnDataName={dataElement.name}
+              columnDataFunction={dataElement.function}
+              index={index}
+              key={index}
+            />
+          );
+        })}
+      </div>
     );
   } else {
     //loading animation bootstrap "spinner" until data is fet
