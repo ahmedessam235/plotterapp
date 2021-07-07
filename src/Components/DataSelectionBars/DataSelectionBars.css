@@ -1,9 +1,14 @@
+.databars{
+    margin-left: 40px;
+}
 .dimension{
 border: 1px solid;
-margin-bottom: 15px;
+margin-top: 15px;
 width: 300px;
 background-color:beige;
 height:40px;
+
+margin-bottom: 2%;
 
 }
 .measurement{
@@ -11,19 +16,28 @@ height:40px;
     width: 300px;
     background-color:beige;
     height: 40px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 
 }
 
-.databars{
-    display: flex;
-    flex-direction: column; 
-    margin-left: 30%;
-}
 
-.dimension-group{
-    /* display:flex; */
-    flex-direction: row;
-    justify-content: flex-start;
+
+.dimension-clear-btn{
+    /* margin-top: 20px;     */
+    margin-left: 20px;
+    padding-bottom: 10px;
+    }
     
+    .measure-clear-btn{
+        margin-left: 20px;
+        padding-bottom: 10px;
+    }
+
+.dimension-label{
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.measure-label{
+    padding-right: 22px;
+    /* margin-left: 12px; */
 }

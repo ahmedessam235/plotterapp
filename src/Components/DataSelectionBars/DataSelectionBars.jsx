@@ -3,7 +3,6 @@ import { DropTarget } from "react-drag-drop-container";
 import "./DataSelectionBars.css";
 import { Button } from "react-bootstrap";
 import { businessDataContext } from "../../App";
-
 function DataSelectionBars() {
   const [dimension, setDimension] = useState("");
   const [measurment, setMeasurment] = useState("");
@@ -46,26 +45,32 @@ function DataSelectionBars() {
   return (
     <div className="databars">
       {/* specfying the drop area and using the targetKey props to specify where the draggables will be dropped */}
-      <div className="dimension-group">
+
+      <div className=" d-inline-block">
         <DropTarget targetKey="dimension" onHit={handleDropDimension}>
-          <label>
-            Dimension
-            <div className="dimension"> {dimension}</div>
-            <Button variant="outline-dark" onClick={handleDimensionDelete}>
-              Clear
-            </Button>
-          </label>
+          <p className="dimension-label d-inline-block"> Dimension: </p>
+          <div className="dimension d-inline-block"> {dimension}</div>
+          <Button
+            className="dimension-clear-btn"
+            variant="outline-dark"
+            onClick={handleDimensionDelete}
+          >
+            Clear
+          </Button>
         </DropTarget>
       </div>
+
       <div>
         <DropTarget targetKey="measure" onHit={handleDropMeasurement}>
-          <label>
-            Measure
-            <div className="measurement">{measurment}</div>
-            <Button variant="outline-dark" onClick={handleMeasureDelete}>
-              Clear
-            </Button>
-          </label>
+          <p className=" measure-label d-inline-block"> Measure: </p>
+          <div className="measurement d-inline-block">{measurment}</div>
+          <Button
+            className="measure-clear-btn"
+            variant="outline-dark"
+            onClick={handleMeasureDelete}
+          >
+            Clear
+          </Button>
         </DropTarget>
       </div>
     </div>

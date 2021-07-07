@@ -1,4 +1,9 @@
 .data-section{
     display: flex;
     flex-direction: row;
+  
+}
+
+.data-visual{
+    margin-left: 20%;
 }

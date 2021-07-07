@@ -3,9 +3,6 @@ import LineChart from "./Components/Plotter/Plotter";
 import DataColumn from "./Components/DataColumn/DataColumn";
 import NavBar from "./Components/NavBar/NavBar";
 import DataSelectionBars from "./Components/DataSelectionBars/DataSelectionBars";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "./App.css";
 export var businessDataContext = createContext(null); //global data to handle the selected measures and diemensions.
 function App() {
@@ -21,8 +18,10 @@ function App() {
         <NavBar />
         <div className="data-section">
           <DataColumn />
-          <DataSelectionBars />
-          <LineChart data={buisnessDetails} />
+          <div className="data-visual">
+            <DataSelectionBars />
+            <LineChart data={buisnessDetails} />
+          </div>
         </div>
       </businessDataContext.Provider>
     </div>
