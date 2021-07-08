@@ -29,3 +29,9 @@ Data Visualization web app implemented in react it's mainly consists of :
 			Actions :
 			------------
 			1 - columnActions: resposible for data requesting and sending with the provided API.
+	how to run :
+	------------
+			1 - inside plotter-app directory run npm install and then npm start and the project will run on localhost 3000.
+			2 - make sure you install the following :
+				- install node from : https://nodejs.org/en/download/
+	 			- install npm from : https://www.npmjs.com/get-npm
