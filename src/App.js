@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import DataSelectionBars from "./Components/DataSelectionBars/DataSelectionBars";
 import "./App.css";
 export var businessDataContext = createContext(null); //global data to handle the selected measures and diemensions.
+
 function App() {
   const [buisnessDetails, setBuisnessDetails] = useState({
     measures: "",
