@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Plotter APP:
+------------
+Data Visualization web app implemented in react it's mainly consists of :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+		1 - Draggable buisness data categories "measures and dimensions " provided from the following API : GET "https://plotter-task.herokuapp.com/columns".
+		2 - Data selection bars, one for measures and one for dimensions and each bar can take the respective data type dimension can only be dropped in dimension bar and so on.
+		3 - when the user drag and drop dimensions and measures the data is sent to POST   "https://plotter-task.herokuapp.com/data" to get the detailed buisness data which needs to be plotted.
+		4 - plotter which is a graph showing the measure vs dimension with an intersective points that shows more data in toolip when the user hover on these points.
+		
+	
+	Technologies:
+	-------------
+			
+			1 - React JS.
+			2 - useContext Hook was used for global context handling.
+			3 - React bootstrap for prestyled components.
+			4 - chart js library used for generating the needed graphs.
+			5 - react-drag-drop-container used for dragging and dropping elements.
+			
+	Project structure :
+	-------------------
+			Components :
+			------------
+			1 - NavBar: contains the top Navbar for the plotter APP.
+			2 - DataColumn: contains the left side column and render each draggable ColumnDataElement which is fetched from  GET "https://plotter-task.herokuapp.com/columns". API.
+			3 - ColumnDataElement : contains each individual measure or dimension inside the left column.
+			4 - DataSelectionBars: two droppable bars each on for dimension and one for measures along with the delete buttons for each bar.
+			5 - Plotter: the component that is resposnbile for rendering the chart JS line graph.	
+			Actions :
+			------------
+			1 - columnActions: resposible for data requesting and sending with the provided API.
